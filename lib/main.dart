@@ -34,7 +34,7 @@ class MyApp extends StatelessWidget {
         //
         // This works for code too, not just values: Most code changes can be
         // tested with just a hot reload.
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        // colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
       home:  const MyHomePage(title: '',),
@@ -86,99 +86,123 @@ class _MyHomePageState extends State<MyHomePage> {
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
     return Scaffold(
-      body: Center(
-          child:Column(
-            children:[
-              Padding(
-                padding: const EdgeInsets.only(top: 128),
-                child: Image.asset('assets/images/image.png',width: 56,height: 56,),
-              ),
-            const Padding(
-                padding: EdgeInsets.only(top: 65),
-                 child: Text('Please select your Language',
-                   style: TextStyle(
-                     fontSize: 20,
-                     fontFamily: 'Roboto-Regular',
-                     fontWeight: FontWeight.bold
-                   ),),
-            ),
-             Padding(
-               padding: const EdgeInsets.only(top: 10,bottom: 20),
-               child:RichText(
-                 textAlign: TextAlign.center ,
-                 text: const TextSpan(
-                   style:TextStyle(
-                     fontSize: 14,
-                     fontFamily: 'Roboto-Regular',
-                     color: Color(0xFF6A6C7B)
-                   ) ,
-                   children: [
-                     TextSpan(text: 'You can change the language\n'),
-                     TextSpan(text: 'at any time.')
-                   ],
-                 ),
-               ),
-             ),
-              Container(
-                width: 216,
-                height: 48,
-                // padding: const EdgeInsets.only(top: 65),
-                decoration: BoxDecoration(
-
-                  border: Border.all(
-                    color: const Color(0xFF2F3037),
-                    width: 1
-                  ),
+      body: Container(
+        child: Center(
+            child:Column(
+              children:[
+                Padding(
+                  padding: const EdgeInsets.only(top: 180.33),
+                  child: Image.asset('assets/images/image.png',width: 56,height: 56,),
                 ),
-                child:DropdownButtonHideUnderline(
-                  child: DropdownButton<String>(
-                    value: dropdownValue,
-                    icon: const Icon(Icons.arrow_drop_down),
-                    iconSize: 24,
-                    elevation: 0,
-                    style: const TextStyle(color: Color(0xFF2F3037)),
-                    onChanged:(String? newValue) {
-                      setState(() {
-                        dropdownValue = newValue!;
-                      });
-                    },
-                    itemHeight: 48,
-                    items: options.map<DropdownMenuItem<String>>((String value){
-                      return DropdownMenuItem<String>(
-                        value: value,
-                        child:SizedBox(width: 180, child: Padding(
-                          padding: const EdgeInsets.only(left: 10),
-                            child: Text(value))  ) ,
-                      );
-                    }).toList(),
-                  ),
+                const Padding(
+                  padding: EdgeInsets.only(top:50 ),
+                  child: Text('Please select your Language',
+                    style: TextStyle(
+                        fontSize: 20,
+                        fontFamily: 'Roboto-Regular',
+                        fontWeight: FontWeight.bold
+                    ),),
                 ),
-
-              ),
-             Padding(
-                 padding: const EdgeInsets.only(top: 20),
-                  child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: const Color(0xFF2E3B62),
-                      fixedSize: const Size(216, 48),
-                      padding: const EdgeInsets.all(10),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(0)
-                      )
+                Padding(
+                  padding: const EdgeInsets.only(top: 10,bottom: 20),
+                  child:RichText(
+                    textAlign: TextAlign.center ,
+                    text: const TextSpan(
+                      style:TextStyle(
+                          fontSize: 14,
+                          fontFamily: 'Roboto-Regular',
+                          color: Color(0xFF6A6C7B)
+                      ) ,
+                      children: [
+                        TextSpan(text: 'You can change the language\n'),
+                        TextSpan(text: 'at any time.')
+                      ],
                     ),
-                 onPressed: (){
+                  ),
+                ),
+                Container(
+                  width: 216,
+                  height: 48,
+                  // padding: const EdgeInsets.only(top: 65),
+                  decoration: BoxDecoration(
 
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => MobileNumberPage()));
-                 }, child: const Text('NEXT',
-                  style: TextStyle(color: Colors.white,
-                  fontFamily: 'Montserrat-Regular',
-                  fontSize: 16),
-                  )
-                  )
-             ) ,
-            ] ,
-          )
-      ),
+                    border: Border.all(
+                        color: const Color(0xFF2F3037),
+                        width: 1
+                    ),
+                  ),
+                  child:DropdownButtonHideUnderline(
+                    child: DropdownButton<String>(
+                      value: dropdownValue,
+                      icon: const Icon(Icons.arrow_drop_down),
+                      iconSize: 24,
+                      elevation: 0,
+                      style: const TextStyle(color: Color(0xFF2F3037)),
+                      onChanged:(String? newValue) {
+                        setState(() {
+                          dropdownValue = newValue!;
+                        });
+                      },
+                      itemHeight: 48,
+                      items: options.map<DropdownMenuItem<String>>((String value){
+                        return DropdownMenuItem<String>(
+                          value: value,
+                          child:SizedBox(width: 180, child: Padding(
+                              padding: const EdgeInsets.only(left: 10),
+                              child: Text(value))  ) ,
+                        );
+                      }).toList(),
+                    ),
+                  ),
+
+                ),
+                Padding(
+                    padding: const EdgeInsets.only(top: 20),
+                    child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                            backgroundColor: const Color(0xFF2E3B62),
+                            fixedSize: const Size(216, 48),
+                            padding: const EdgeInsets.all(10),
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(0)
+                            )
+                        ),
+                        onPressed: (){
+
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => MobileNumberPage()));
+                        }, child: const Text('NEXT',
+                      style: TextStyle(color: Colors.white,
+                          fontFamily: 'Montserrat-Regular',
+                          fontSize: 16),
+                    )
+                    )
+                ) ,
+                Padding(
+                    padding: EdgeInsets.only(top:212.838),
+                    child:Stack(
+                      children: [
+                        Image.asset(
+                          'assets/images/waves.png',
+                          height: 102,
+                          width: MediaQuery.of(context).size.width,
+                          fit: BoxFit.cover,
+                        ),
+                        Image.asset(
+                          'assets/images/Vector.png',
+                          height: 102,
+                          width: MediaQuery.of(context).size.width,
+                          fit: BoxFit.cover,
+                        ),
+                      ],
+                    ),
+                )
+
+
+              ] ,
+            )
+        ),
+
+      )
     
     );
   }
