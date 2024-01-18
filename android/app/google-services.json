@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "975927484167",
+    "project_id": "phoneauthflutter-25aa0",
+    "storage_bucket": "phoneauthflutter-25aa0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:975927484167:android:6ce7f41e0bf579c84aafa2",
+        "android_client_info": {
+          "package_name": "com.example.liveasy"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCIDvhWVOx_IWanXeHLJk4Bsj5YUKJPSbc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
